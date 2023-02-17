@@ -20,8 +20,12 @@ pipeline{
     }
   }
   post{
-    failure{
-      echo 'Pipeline failed'
+    always{
+      script{
+        if(currentBuild.status=='FAILURE'){
+          echo 'Pipeline failed'
+      }
+      }
     }
-  }
+    }
 }
