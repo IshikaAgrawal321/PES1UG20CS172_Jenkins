@@ -22,7 +22,7 @@ pipeline{
   post{
     always{
       script{
-        if(currentBuild.status=='FAILURE'){
+        if(currentBuild.result=='FAILURE'){
           echo 'Pipeline failed'
       }
       }
